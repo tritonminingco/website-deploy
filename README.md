@@ -47,9 +47,6 @@ This package contains the enhanced Triton Mining Co. website with comprehensive 
 2. Ensure all files maintain their relative paths
 3. Point your domain to the `index.html` file
 
-## 🌐 Live Version
-The website is currently deployed at: https://ttmwukiz.manus.space
-
 ## 📋 File Dependencies
 - All CSS files should be in the same directory as `index.html`
 - All JavaScript files should be in the same directory as `index.html`
@@ -64,7 +61,4 @@ The website is currently deployed at: https://ttmwukiz.manus.space
 
 ## 📞 Support
 For questions about the enhanced website features or DeepSeaGuard implementation, refer to the comprehensive documentation included in the code comments.
-
----
-Enhanced by Manus AI - Making your vision reality ⚡
 

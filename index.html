@@ -13,39 +13,41 @@
 <body>
 <!-- Skip to content link for accessibility -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
-<!-- HEADER -->
-<header>
-<img alt="Triton Logo" class="logo" src="assets/logo.png"/>
-<span class="company-name">Triton Mining Co.</span>
-<div class="nav-container">
-<button aria-controls="primary-navigation" aria-expanded="false" class="mobile-nav-toggle">
-<span class="sr-only">Menu</span>
-<div class="hamburger"></div>
-</button>
-<nav data-visible="false" id="primary-navigation">
-<a class="nav-link" href="#hero">Home</a>
-<a class="nav-link" href="#tech">Technology</a>
-<a class="nav-link" href="#deepseaguard">Compliance</a>
-<a class="nav-link" href="#venture">Backers</a>
-<a class="nav-link" href="#contact">Contact</a>
-</nav>
-</div>
+<!-- TOP NAVIGATION BAR -->
+<header class="top-nav">
+  <div class="nav-content right-nav">
+    <div class="nav-brand">
+      <img alt="Triton Logo" class="logo" src="assets/triton-logo.png"/>
+      <h2 class="company-name">Triton Mining Co.</h2>
+    </div>
+    <nav class="main-nav">
+      <a class="nav-link" href="#hero">Home</a>
+      <a class="nav-link" href="#tech">Technology</a>
+      <a class="nav-link" href="#deepseaguard">Compliance</a>
+      <a class="nav-link" href="#venture">Backers</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="nav-accent"></div>
 </header>
 <main id="main-content">
 <!-- HERO -->
 <section id="hero">
-<img alt="Ocean Background" class="hero-bg" src="assets/IMG_9439.jpeg"/>
-<div class="hero-overlay"></div>
-<div class="hero-text">
-<p class="hero-subproof">Backed by field-tested prototypes and AI-automated systems, we’re proving clean ocean mining is no longer a fantasy.</p><div class="press-logos"><img alt="Forbes" src="assets/forbes-logo.png" style="height:30px;margin-right:10px;"/><img alt="TechCrunch" src="assets/techcrunch-logo.png" style="height:30px;"/></div><h1>Redefining Ocean Mining with AI, Autonomy, and Ethics</h1>
-<p>Triton Mining Co. is building the future of deep-sea exploration—cleaner, smarter, and open-source.</p>
+<img alt="Ocean Background" class="hero-bg" src="assets/hero.png"/>
+-<div class="hero-text">
+<p class="hero-subproof">Backed by field-tested prototypes and AI-automated systems, we’re proving clean ocean mining is no longer a fantasy.</p>
+<div class="press-logos">
+</div>
+<h1>Redefining Ocean Mining with AI, Autonomy, and Ethics</h1>
+<p>Triton Mining Co. is redefining deep-sea exploration through sustainable practices, advanced technology, and open-source innovation.</p>
 <a class="cta" href="#tech">Explore the Technology</a>
 </div>
 </section>
 <!-- SWARM TECH -->
 <section class="animate-on-scroll" id="tech">
-<h2 class="section-title">Our Swarm is Smarter</h2><p>Octopod Miner: Flexible limbs for nodule extraction with minimal disturbance.</p>
-<p>Non-invasive robotic fleets guided by AI—engineered for precision and preservation.</p>
+<h2 class="section-title">Our Swarm is Smarter</h2>
+<p>Octopod Miner: Flexible limbs for nodule extraction with minimal disturbance.</p>
+<p>Non-invasive robotic fleets guided by AI, engineered for precision and preservation.</p>
 <div class="tech-images">
 <img alt="AI Mining Tank" loading="lazy" src="assets/swarm-tank.png"/>
 <img alt="Octopod Miner" loading="lazy" src="assets/octopod-robot.png"/>
@@ -57,7 +59,12 @@
 <h2 class="section-title">Surface Harvesters</h2>
 <img alt="Solar Miner on Beach" loading="lazy" src="assets/solar-crawler.png"/>
 
-<ul><li>Constructed from corrosion-resistant carbon composites</li><li>Solar with dual-battery redundancy—36 hours autonomy</li><li>Ideal for estuarine and reef-margin data acquisition</li></ul></section>
+<ul>
+<li>Constructed from corrosion-resistant carbon composites</li>
+<li>Solar with dual-battery redundancy 36 hours autonomy</li>
+<li>Ideal for estuarine and reef-margin data acquisition</li>
+</ul>
+</section>
 <!-- DEEPSEA SYSTEMS -->
 <section class="animate-on-scroll" id="deepfleet">
 <h2 class="section-title">Deep-Sea Autonomous Fleet</h2>
@@ -66,12 +73,13 @@
 <img alt="Fishlike Autonomous Collector" loading="lazy" src="assets/fishbot.png"/>
 </div>
 
-<p>Fleet includes multi-role AUVs operating in swarms under a command-control hierarchy. Operational at 4000m depth, these units map, collect, and communicate autonomously.</p></section>
+<p>Fleet includes multi-role AUVs operating in swarms under a command-control hierarchy. Operational at 4000m - 10000m depth, these units map, collect, and communicate autonomously.</p>
+</section>
 <!-- ENGINEERING -->
 <section class="animate-on-scroll" id="engineering">
 <h2 class="section-title">Engineering &amp; Design</h2>
 <img alt="Blueprint Diagram" loading="lazy" src="assets/auv-blueprint.png"/>
-<p>Every system is built from first principles—optimized for durability, efficiency, and repairability.</p>
+<p>Every system is built from first principles, optimized for durability, efficiency, and repairability.</p>
 </section>
 <!-- STRATEGIC IMPACT -->
 <section class="animate-on-scroll" id="geozones">
@@ -88,7 +96,7 @@
 <!-- DEEPSEAGUARD COMPLIANCE -->
 <section class="animate-on-scroll" id="deepseaguard">
 <h2 class="section-title">DeepSeaGuard Compliance Dashboard</h2>
-<p>Our revolutionary open-source monitoring platform ensures complete transparency and real-time ISA alignment—available to regulators, scientists, and the public.</p>
+<p>Our revolutionary open-source monitoring platform ensures complete transparency and real-time ISA alignment, available to regulators, scientists, and the public.</p>
 <div class="deepseaguard-overview">
 <img alt="DeepSeaGuard Dashboard Interface" loading="lazy" src="assets/deepseaguard-dashboard.png"/>
 <div class="overview-content">
@@ -173,7 +181,9 @@
 </div>
 </div>
 </div>
-<div class="cta-section"><a class="cta secondary" download href="assets/sample-isa-report.pdf">Download Sample ISA Report</a><blockquote class="quote">"DeepSeaGuard sets a new standard for ocean mining compliance" — Dr. Evelyn Nash, Policy Advisor</blockquote>
+<div class="cta-section">
+<a class="cta secondary" download href="assets/sample-isa-report.pdf">Download Sample ISA Report</a>
+<blockquote class="quote">"DeepSeaGuard sets a new standard for ocean mining compliance" — Dr. Evelyn Nash, Policy Advisor</blockquote>
 <a class="cta" href="#contact">Request DeepSeaGuard Demo</a>
 <a class="cta secondary" href="https://github.com/tritonminingco/deepseaguard" target="_blank">View on GitHub</a>
 </div>
@@ -183,13 +193,15 @@
 <h2 class="section-title">Data Insights</h2>
 <p>Explore the critical mineral supply-demand gap and our environmental impact reduction.</p>
 <div class="charts-section" id="chart-container"></div>
-<p class="note" style="text-align:center;">Exportable CSVs available. Public API access by request.</p></section>
+<p class="note" style="text-align:center;">Exportable CSVs available. Public API access by request.</p>
+</section>
 <!-- ARTICLES -->
 <section class="animate-on-scroll" id="articles">
 <h2 class="section-title">Latest Articles</h2>
 <div class="articles-list">
 <article>
-<p class="meta">By Jorge Pimentel · June 2025 · #AI #SeabedMining</p><h3>How AI is Transforming Ocean Mining</h3>
+<p class="meta">By Jorge Pimentel · June 2025 · #AI #SeabedMining</p>
+<h3>How AI is Transforming Ocean Mining</h3>
 <p>Discover how artificial intelligence is making deep-sea exploration safer and more sustainable.</p>
 <a class="read-more" href="#">Read More</a>
 </article>
@@ -205,13 +217,19 @@
 </article>
 </div>
 </section>
-<!-- CONTACT SECTION -->
+<!-- CONTACT SECTION: Provides company contact info and a user message form -->
 <section class="animate-on-scroll" id="contact">
 <h2 class="section-title">Get in Touch</h2>
+<!-- Brief invitation for users to reach out -->
 <p>Interested in learning more about our technology or DeepSeaGuard compliance platform? We'd love to hear from you.</p>
 <div class="contact-container">
+<!-- CONTACT INFO: Company and project contact details -->
 <div class="contact-info">
-<div class="contact-item"><strong>Media</strong><span>press@tritonmining.co</span></div><h3>Contact Information</h3>
+<div class="contact-item">
+<strong>Media</strong>
+<span>press@tritonmining.co</span>
+</div>
+<h3>Contact Information</h3>
 <div class="contact-item">
 <strong>Headquarters</strong>
 <span>Naples, Florida, USA</span>
@@ -222,30 +240,39 @@
 </div>
 <div class="contact-item">
 <strong>GitHub</strong>
+<!-- Link to main company GitHub profile -->
 <span><a href="https://github.com/tritonminingco" target="_blank">github.com/tritonminingco</a></span>
 </div>
 <div class="contact-item">
 <strong>DeepSeaGuard</strong>
+<!-- Link to DeepSeaGuard open source repository -->
 <span><a href="https://github.com/tritonminingco/deepseaguard" target="_blank">Open Source Repository</a></span>
 </div>
-<a class="cta secondary" href="https://calendly.com/triton-mining" style="margin-top:1rem; display:inline-block;" target="_blank">Book a Call</a></div>
+<!-- Call-to-action button for booking a call via Calendly -->
+<a class="cta secondary" href="https://calendly.com/triton-mining" style="margin-top:1rem; display:inline-block;" target="_blank">Book a Call</a>
+</div>
+<!-- CONTACT FORM: Allows users to send a message to the company -->
 <div class="contact-form">
 <h3>Send us a Message</h3>
 <form id="contactForm">
 <div class="form-group">
 <label for="name">Name *</label>
-<input id="name" name="name" required="" type="text"/>
+<!-- Required name input -->
+<input id="name" name="name" required type="text"/>
 </div>
 <div class="form-group">
 <label for="email">Email *</label>
-<input id="email" name="email" required="" type="email"/>
+<!-- Required email input -->
+<input id="email" name="email" required type="email"/>
 </div>
 <div class="form-group">
 <label for="organization">Organization</label>
+<!-- Optional organization input -->
 <input id="organization" name="organization" type="text"/>
 </div>
 <div class="form-group">
 <label for="interest">Area of Interest</label>
+<!-- Dropdown for user to select their interest area -->
 <select id="interest" name="interest">
 <option value="">Select an option</option>
 <option value="technology">Mining Technology</option>
@@ -258,8 +285,10 @@
 </div>
 <div class="form-group">
 <label for="message">Message *</label>
-<textarea id="message" name="message" required="" rows="5"></textarea>
+<!-- Required message textarea -->
+<textarea id="message" name="message" required rows="5"></textarea>
 </div>
+<!-- Submit button for the contact form -->
 <button class="cta" type="submit">Send Message</button>
 </form>
 </div>
