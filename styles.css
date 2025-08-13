@@ -184,6 +184,7 @@ nav a:hover, nav a.active {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  flex-wrap: wrap;
   /* background: #06101a; */
 }
 
@@ -197,6 +198,7 @@ nav a:hover, nav a.active {
   z-index: 1;
   opacity: 0.6;
   filter: brightness(0.7) blur(1px);
+  flex: 1 1 100%;
 }
 
 .hero-overlay {

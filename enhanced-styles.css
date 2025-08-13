@@ -89,7 +89,7 @@ body::before {
 }
 .nav-brand {
   display: flex;
-  flex-direction: row;
+  flex-direction: row!important;
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
@@ -1375,5 +1375,14 @@ section img {
   .feature-card {
     border: 1px solid #00b4d8;
   }
+}
+
+.mobile-responsive {
+  max-width: 60%;  /* Prevent overflow */
+  width: 100%;  /* Full width on small screens */
+  height: auto;     /* Keep aspect ratio */
+  display: block;   /* Avoid inline spacing */
+  margin: 0 auto;  /* Center align */
+  margin-bottom: 2rem;
 }
 
