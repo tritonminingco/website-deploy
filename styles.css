@@ -175,18 +175,6 @@ nav a:hover, nav a.active {
   border: 0;
 }
 
-/* --- HERO SECTION --- */
-/* #hero {
-  position: relative;
-  height: 90vh;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex-wrap: wrap;
-  /* background: #06101a; */
-} */
 
 .hero-bg {
   position: absolute;
