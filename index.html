@@ -1,316 +1,342 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Triton Mining Co.</title>
-<link href="styles.css" rel="stylesheet"/>
-<link href="enhanced-styles.css" rel="stylesheet"/>
-<!-- Add Chart.js library -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-</head>
-<body>
-<!-- Skip to content link for accessibility -->
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<!-- TOP NAVIGATION BAR -->
-<header class="top-nav">
-  <div class="nav-content right-nav">
-    <div class="nav-brand" style="display: flex; align-items: center;">
-      <img alt="Triton Logo" class="logo" src="assets/triton-logo.png"/>
-      <h2 class="company-name">Triton Mining Co.</h2>
-    </div>
-    <nav class="main-nav">
-      <a class="nav-link" href="#hero">Home</a>
-      <a class="nav-link" href="#tech">Technology</a>
-      <a class="nav-link" href="#deepseaguard">Compliance</a>
-      <a class="nav-link" href="#venture">Backers</a>
-      <a class="nav-link" href="#contact">Contact</a>
-    </nav>
-  </div>
-  <div class="nav-accent"></div>
-</header>
-<main id="main-content">
-<!-- HERO -->
-<section id="hero">
-<img alt="Ocean Background" class="hero-bg" src="assets/hero.png"/>
--<div class="hero-text">
-<p class="hero-subproof">Backed by field-tested prototypes and AI-automated systems, we’re proving clean ocean mining is no longer a fantasy.</p>
-<div class="press-logos">
-</div>
-<h1>Redefining Ocean Mining with AI, Autonomy, and Ethics</h1>
-<p>Triton Mining Co. is redefining deep-sea exploration through sustainable practices, advanced technology, and open-source innovation.</p>
-<a class="cta" href="#tech">Explore the Technology</a>
-</div>
-</section>
-<!-- SWARM TECH -->
-<section class="animate-on-scroll" id="tech">
-<h2 class="section-title">Our Swarm is Smarter</h2>
-<p>Octopod Miner: Flexible limbs for nodule extraction with minimal disturbance.</p>
-<p>Non-invasive robotic fleets guided by AI, engineered for precision and preservation.</p>
-<div class="tech-images">
-<img alt="AI Mining Tank" loading="lazy" src="assets/swarm-tank.png" class="mobile-responsive"/>
-<img alt="Octopod Miner" loading="lazy" src="assets/octopod-robot.png" class="mobile-responsive"/>
-<img alt="Kevlar Flexible Bot" loading="lazy" src="assets/flex-fish.png" class="mobile-responsive"/>
-</div>
-</section>
-<!-- SURFACE SYSTEMS -->
-<section class="animate-on-scroll" id="surface-tech">
-<h2 class="section-title">Surface Harvesters</h2>
-<img alt="Solar Miner on Beach" loading="lazy" src="assets/solar-crawler.png" class="mobile-responsive"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Triton Mining Co.</title>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="./enhanced-styles.css" rel="stylesheet"/>
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  </head>
+  <body>
+    <!-- Skip to content link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- TOP NAVIGATION BAR -->
+    <header class="top-nav">
+      <div class="nav-content right-nav">
+        <div class="nav-brand" style="display: flex; align-items: center; justify-content: space-between;">
+          <img alt="Triton Logo" class="logo" src="assets/triton-logo.png"/>
+          <h2 class="company-name">Triton Mining Co.</h2>
+        </div>
 
-<ul>
-<li>Constructed from corrosion-resistant carbon composites</li>
-<li>Solar with dual-battery redundancy 36 hours autonomy</li>
-<li>Ideal for estuarine and reef-margin data acquisition</li>
-</ul>
-</section>
-<!-- DEEPSEA SYSTEMS -->
-<section class="animate-on-scroll" id="deepfleet">
-<h2 class="section-title">Deep-Sea Autonomous Fleet</h2>
-<div class="deep-images">
-<img alt="Multi-thruster Submarine" loading="lazy" src="assets/thruster-auv.png" class="mobile-responsive"/>
-<img alt="Fishlike Autonomous Collector" loading="lazy" src="assets/fishbot.png" class="mobile-responsive"/>
-</div>
+        <!-- Hamburger (mobile only) -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+          ☰
+        </div>
+      </div>
+      <div>
+        <nav class="main-nav">
+          <div class="nav-panel">
+            <a class="nav-link" href="#hero">Home</a>
+            <a class="nav-link" href="#tech">Technology</a>
+            <a class="nav-link" href="#deepseaguard">Compliance</a>
+            <a class="nav-link" href="#venture">Backers</a>
+            <a class="nav-link" href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-accent"></div>
+    </header>
+    <main id="main-content">
+      <!-- HERO -->
+      <section id="hero">
+        <img alt="Ocean Background" class="hero-bg" src="assets/hero.png"/>
+        -<div class="hero-text">
+          <p class="hero-subproof">Backed by field-tested prototypes and AI-automated systems, we’re proving clean ocean mining is no longer a fantasy.</p>
+          <div class="press-logos">
+          </div>
+          <h1 class="hero-bold">Redefining Ocean Mining with AI, Autonomy, and Ethics</h1>
+          <p class="hero-subproof">Triton Mining Co. is redefining deep-sea exploration through sustainable practices, advanced technology, and open-source innovation.</p>
+          <a class="cta" href="#tech">Explore the Technology</a>
+        </div>
+      </section>
+      <!-- SWARM TECH -->
+      <section class="animate-on-scroll" id="tech">
+        <h2 class="section-title">Our Swarm is Smarter</h2>
+        <p class="sub-swarm">Octopod Miner: Flexible limbs for nodule extraction with minimal disturbance.</p>
+        <p class="sub-swarm">Non-invasive robotic fleets guided by AI, engineered for precision and preservation.</p>
+        <div class="tech-images">
+          <img alt="AI Mining Tank" loading="lazy" src="assets/swarm-tank.png" class="mobile-responsive"/>
+          <img alt="Octopod Miner" loading="lazy" src="assets/octopod-robot.png" class="mobile-responsive"/>
+          <img alt="Kevlar Flexible Bot" loading="lazy" src="assets/flex-fish.png" class="mobile-responsive"/>
+        </div>
+      </section>
+      <!-- SURFACE SYSTEMS -->
+      <section class="animate-on-scroll" id="surface-tech">
+        <h2 class="section-title">Surface Harvesters</h2>
+        <img alt="Solar Miner on Beach" loading="lazy" src="assets/solar-crawler.png" class="mobile-responsive"/>
+        <ul>
+          <li>Constructed from corrosion-resistant carbon composites</li>
+          <li>Solar with dual-battery redundancy 36 hours autonomy</li>
+          <li>Ideal for estuarine and reef-margin data acquisition</li>
+        </ul>
+      </section>
+      <!-- DEEPSEA SYSTEMS -->
+      <section class="animate-on-scroll" id="deepfleet">
+        <h2 class="section-title">Deep-Sea Autonomous Fleet</h2>
+        <div class="deep-images">
+          <img alt="Multi-thruster Submarine" loading="lazy" src="assets/thruster-auv.png" class="mobile-responsive"/>
+          <img alt="Fishlike Autonomous Collector" loading="lazy" src="assets/fishbot.png" class="mobile-responsive"/>
+        </div>
+        <p class="sub-swarm">Fleet includes multi-role AUVs operating in swarms under a command-control hierarchy. Operational at 4000m - 10000m depth, these units map, collect, and communicate autonomously.</p>
+      </section>
+      <!-- ENGINEERING -->
+      <section class="animate-on-scroll" id="engineering">
+        <h2 class="section-title">Engineering &amp; Design</h2>
+        <img alt="Blueprint Diagram" loading="lazy" src="assets/auv-blueprint.png" class="mobile-responsive"/>
+        <p class="sub-swarm">Every system is built from first principles, optimized for durability, efficiency, and repairability.</p>
+      </section>
+      <!-- STRATEGIC IMPACT -->
+      <section class="animate-on-scroll" id="geozones">
+        <h2 class="section-title">Strategic Mining Zones</h2>
+        <img alt="Polymetallic Nodule Zones Map" loading="lazy" src="assets/global-nodules.png" class="mobile-responsive"/>
+        <p class="sub-swarm">We focus on nodule-rich regions identified for sustainable harvesting under ISA guidelines.</p>
+      </section>
+      <!-- VENTURE SUPPORT -->
+      <section class="animate-on-scroll" id="venture">
+        <h2 class="section-title">Backed by Deep Blue Ventures</h2>
+        <img alt="Deep Blue Ventures Logo" loading="lazy" src="assets/logo-deepblue.png" class="mobile-responsive"/>
+        <p class="sub-swarm">We're supported by a team of technologists, builders, and investors committed to long-term planetary solutions.</p>
+      </section>
+      <!-- DEEPSEAGUARD COMPLIANCE -->
+      <section class="animate-on-scroll" id="deepseaguard">
+        <h2 class="section-title">DeepSeaGuard Compliance Dashboard</h2>
+        <p class="sub-swarm">Our revolutionary open-source monitoring platform ensures complete transparency and real-time ISA alignment, available to regulators, scientists, and the public.</p>
+        <div class="deepseaguard-overview">
+          <img alt="DeepSeaGuard Dashboard Interface" loading="lazy" src="assets/deepseaguard-dashboard.png" class="mobile-responsive"/>
+          <div class="overview-content">
+            <h3>Real-Time Environmental Compliance</h3>
+            <p>DeepSeaGuard provides comprehensive monitoring and transparent reporting aligned with ISA standards ISBA/21/LTC/15, ensuring every operation meets the highest environmental and regulatory standards.</p>
+          </div>
+        </div>
+        <div class="compliance-features">
+          <div class="feature-grid">
+            <div class="feature-card">
+              <h4>Environmental Monitoring</h4>
+              <img alt="Sediment Plume Monitoring" loading="lazy" src="assets/sediment-monitoring.png" class="mobile-responsive"/>
+              <ul>
+                <li>Real-time sediment plume tracking</li>
+                <li>Water quality parameter monitoring</li>
+                <li>Species protection alerts</li>
+                <li>Habitat impact assessment</li>
+              </ul>
+            </div>
+            <div class="feature-card visible">
+              <h4>Operational Oversight</h4>
+              <img alt="Plume Analysis System" loading="lazy" src="assets/plume-analysis.jpg" class="mobile-responsive"/>
+              <ul>
+                <li>AUV tracking and positioning</li>
+                <li>Mission logs and efficiency metrics</li>
+                <li>Equipment performance monitoring</li>
+                <li>Resource consumption tracking</li>
+              </ul>
+            </div>
+            <div class="feature-card visible">
+              <h4>ISA Compliance Reporting</h4>
+              <img alt="Compliance Modeling" loading="lazy" src="assets/compliance-modeling.jpg" class="mobile-responsive"/>
+              <ul>
+                <li>ISBA/21/LTC/15 format compliance</li>
+                <li>Digital georeferenced datasets</li>
+                <li>Automated annual reporting</li>
+                <li>Real-time violation alerts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="technical-specs">
+          <h3>Technical Capabilities</h3>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <h5>Data Integration</h5>
+              <p>Live AUV telemetry, NOAA/ISA oceanographic data, and remote database connectivity (PostGIS/TimescaleDB)</p>
+            </div>
+            <div class="spec-item">
+              <h5>AI-Powered Analysis</h5>
+              <p>OpenCV and TensorFlow integration for automated environmental impact assessment and predictive modeling</p>
+            </div>
+            <div class="spec-item">
+              <h5>Export Capabilities</h5>
+              <p>ISA reporting mode with CSV, XML, and GIS format exports for regulatory compliance</p>
+            </div>
+            <div class="spec-item">
+              <h5>Real-Time Alerts</h5>
+              <p>Instant notifications for ISA violation thresholds, sensitive zone breaches, and environmental anomalies</p>
+            </div>
+          </div>
+        </div>
+        <div class="compliance-standards">
+          <h3>Regulatory Compliance</h3>
+          <p class="sub-swarm">DeepSeaGuard ensures full compliance with International Seabed Authority standards and environmental protection requirements:</p>
+          <div class="standards-list">
+            <div class="standard-item">
+              <strong>ISBA/21/LTC/15</strong>
+              <span>Annual reporting format and structure compliance</span>
+            </div>
+            <div class="standard-item">
+              <strong>ISA Mining Code</strong>
+              <span>Comprehensive rules and regulations adherence</span>
+            </div>
+            <div class="standard-item">
+              <strong>Environmental Standards</strong>
+              <span>Legally binding environmental protection measures</span>
+            </div>
+            <div class="standard-item">
+              <strong>Real-Time Logging</strong>
+              <span>Continuous monitoring of sediment, species, recovery rates, and waste</span>
+            </div>
+          </div>
+        </div>
+        <div class="cta-section">
+          <a class="cta secondary" download href="assets/sample-isa-report.pdf">Download Sample ISA Report</a>
+          <blockquote class="quote">"DeepSeaGuard sets a new standard for ocean mining compliance" — Dr. Evelyn Nash, Policy Advisor</blockquote>
+          <a class="cta" href="#contact">Request DeepSeaGuard Demo</a>
+          <a class="cta secondary" href="https://github.com/tritonminingco/deepseaguard" target="_blank">View on GitHub</a>
+        </div>
+      </section>
+      <!-- DATA VISUALIZATION SECTION -->
+      <section class="animate-on-scroll" id="data-insights">
+        <h2 class="section-title">Data Insights</h2>
+        <p>Explore the critical mineral supply-demand gap and our environmental impact reduction.</p>
+        <div class="charts-section" id="chart-container"></div>
+        <p class="note" style="text-align:center;">Exportable CSVs available. Public API access by request.</p>
+      </section>
+      <!-- ARTICLES -->
+      <section class="animate-on-scroll" id="articles">
+        <h2 class="section-title">Latest Articles</h2>
+        <div class="articles-list">
+          <article>
+            <p class="meta">By Jorge Pimentel · June 2025 · #AI #SeabedMining</p>
+            <h3>How AI is Transforming Ocean Mining</h3>
+            <p>Discover how artificial intelligence is making deep-sea exploration safer and more sustainable.</p>
+            <a class="read-more" href="#">Read More</a>
+          </article>
+          <article>
+            <h3>Designing for the Deep: Engineering Challenges</h3>
+            <p>Explore the unique engineering hurdles faced when building autonomous underwater vehicles.</p>
+            <a class="read-more" href="#">Read More</a>
+          </article>
+          <article>
+            <h3>Ethics and Compliance in Ocean Resource Extraction</h3>
+            <p>Learn about the importance of transparency and compliance in the future of ocean mining.</p>
+            <a class="read-more" href="#">Read More</a>
+          </article>
+        </div>
+      </section>
+      <!-- CONTACT SECTION: Provides company contact info and a user message form -->
+      <section class="animate-on-scroll" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <!-- Brief invitation for users to reach out -->
+        <p>Interested in learning more about our technology or DeepSeaGuard compliance platform? We'd love to hear from you.</p>
+        <div class="contact-container">
+          <!-- CONTACT INFO: Company and project contact details -->
+          <div class="contact-info">
+            <div class="contact-item">
+              <strong>Media</strong>
+              <span>press@tritonmining.co</span>
+            </div>
+            <h3>Contact Information</h3>
+            <div class="contact-item">
+              <strong>Headquarters</strong>
+              <span>Naples, Florida, USA</span>
+            </div>
+            <div class="contact-item">
+              <strong>Email</strong>
+              <span>info@tritonmining.co</span>
+            </div>
+            <div class="contact-item">
+              <strong>GitHub</strong>
+              <!-- Link to main company GitHub profile -->
+              <span><a href="https://github.com/tritonminingco" target="_blank">github.com/tritonminingco</a></span>
+            </div>
+            <div class="contact-item">
+              <strong>DeepSeaGuard</strong>
+              <!-- Link to DeepSeaGuard open source repository -->
+              <span><a href="https://github.com/tritonminingco/deepseaguard" target="_blank">Open Source Repository</a></span>
+            </div>
+            <!-- Call-to-action button for booking a call via Calendly -->
+            <a class="cta secondary" href="https://calendly.com/triton-mining" style="margin-top:1rem; display:inline-block;" target="_blank">Book a Call</a>
+          </div>
+          <!-- CONTACT FORM: Allows users to send a message to the company -->
+          <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <!-- Required name input -->
+                <input id="name" name="name" required type="text"/>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <!-- Required email input -->
+                <input id="email" name="email" required type="email"/>
+              </div>
+              <div class="form-group">
+                <label for="organization">Organization</label>
+                <!-- Optional organization input -->
+                <input id="organization" name="organization" type="text"/>
+              </div>
+              <div class="form-group">
+                <label for="interest">Area of Interest</label>
+                <!-- Dropdown for user to select their interest area -->
+                <select id="interest" name="interest">
+                  <option value="">Select an option</option>
+                  <option value="technology">Mining Technology</option>
+                  <option value="deepseaguard">DeepSeaGuard Platform</option>
+                  <option value="compliance">ISA Compliance</option>
+                  <option value="partnership">Partnership Opportunities</option>
+                  <option value="investment">Investment Inquiries</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <!-- Required message textarea -->
+                <textarea id="message" name="message" required rows="5"></textarea>
+              </div>
+              <!-- Submit button for the contact form -->
+              <button class="cta" type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <img alt="Triton Logo" class="footer-logo" src="assets/logo.png"/>
+        <p>© 2025 Triton Mining Co. | Naples, FL</p>
+        <a href="https://github.com/tritonminingco" target="_blank">View on GitHub</a>
+      </div>
+    </footer>
+    <!-- Back to top button -->
+    <button aria-label="Back to top" class="back-to-top">
+    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+    </button>
+    <!-- Scripts -->
+    <script src="visualizations.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+      const nav = document.querySelector('.main-nav');
+      const main_content = document.querySelector('#main-content');
+      const panel = document.querySelector('.nav-panel');
 
-<p>Fleet includes multi-role AUVs operating in swarms under a command-control hierarchy. Operational at 4000m - 10000m depth, these units map, collect, and communicate autonomously.</p>
-</section>
-<!-- ENGINEERING -->
-<section class="animate-on-scroll" id="engineering">
-<h2 class="section-title">Engineering &amp; Design</h2>
-<img alt="Blueprint Diagram" loading="lazy" src="assets/auv-blueprint.png" class="mobile-responsive"/>
-<p>Every system is built from first principles, optimized for durability, efficiency, and repairability.</p>
-</section>
-<!-- STRATEGIC IMPACT -->
-<section class="animate-on-scroll" id="geozones">
-<h2 class="section-title">Strategic Mining Zones</h2>
-<img alt="Polymetallic Nodule Zones Map" loading="lazy" src="assets/global-nodules.png" class="mobile-responsive"/>
-<p>We focus on nodule-rich regions identified for sustainable harvesting under ISA guidelines.</p>
-</section>
-<!-- VENTURE SUPPORT -->
-<section class="animate-on-scroll" id="venture">
-<h2 class="section-title">Backed by Deep Blue Ventures</h2>
-<img alt="Deep Blue Ventures Logo" loading="lazy" src="assets/logo-deepblue.png" class="mobile-responsive"/>
-<p>We're supported by a team of technologists, builders, and investors committed to long-term planetary solutions.</p>
-</section>
-<!-- DEEPSEAGUARD COMPLIANCE -->
-<section class="animate-on-scroll" id="deepseaguard">
-<h2 class="section-title">DeepSeaGuard Compliance Dashboard</h2>
-<p>Our revolutionary open-source monitoring platform ensures complete transparency and real-time ISA alignment, available to regulators, scientists, and the public.</p>
-<div class="deepseaguard-overview">
-<img alt="DeepSeaGuard Dashboard Interface" loading="lazy" src="assets/deepseaguard-dashboard.png" class="mobile-responsive"/>
-<div class="overview-content">
-<h3>Real-Time Environmental Compliance</h3>
-<p>DeepSeaGuard provides comprehensive monitoring and transparent reporting aligned with ISA standards ISBA/21/LTC/15, ensuring every operation meets the highest environmental and regulatory standards.</p>
-</div>
-</div>
-<div class="compliance-features">
-<div class="feature-grid">
-<div class="feature-card">
-<h4>Environmental Monitoring</h4>
-<img alt="Sediment Plume Monitoring" loading="lazy" src="assets/sediment-monitoring.png" class="mobile-responsive"/>
-<ul>
-<li>Real-time sediment plume tracking</li>
-<li>Water quality parameter monitoring</li>
-<li>Species protection alerts</li>
-<li>Habitat impact assessment</li>
-</ul>
-</div>
-<div class="feature-card">
-<h4>Operational Oversight</h4>
-<img alt="Plume Analysis System" loading="lazy" src="assets/plume-analysis.jpg" class="mobile-responsive"/>
-<ul>
-<li>AUV tracking and positioning</li>
-<li>Mission logs and efficiency metrics</li>
-<li>Equipment performance monitoring</li>
-<li>Resource consumption tracking</li>
-</ul>
-</div>
-<div class="feature-card">
-<h4>ISA Compliance Reporting</h4>
-<img alt="Compliance Modeling" loading="lazy" src="assets/compliance-modeling.jpg" class="mobile-responsive"/>
-<ul>
-<li>ISBA/21/LTC/15 format compliance</li>
-<li>Digital georeferenced datasets</li>
-<li>Automated annual reporting</li>
-<li>Real-time violation alerts</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="technical-specs">
-<h3>Technical Capabilities</h3>
-<div class="specs-grid">
-<div class="spec-item">
-<h5>Data Integration</h5>
-<p>Live AUV telemetry, NOAA/ISA oceanographic data, and remote database connectivity (PostGIS/TimescaleDB)</p>
-</div>
-<div class="spec-item">
-<h5>AI-Powered Analysis</h5>
-<p>OpenCV and TensorFlow integration for automated environmental impact assessment and predictive modeling</p>
-</div>
-<div class="spec-item">
-<h5>Export Capabilities</h5>
-<p>ISA reporting mode with CSV, XML, and GIS format exports for regulatory compliance</p>
-</div>
-<div class="spec-item">
-<h5>Real-Time Alerts</h5>
-<p>Instant notifications for ISA violation thresholds, sensitive zone breaches, and environmental anomalies</p>
-</div>
-</div>
-</div>
-<div class="compliance-standards">
-<h3>Regulatory Compliance</h3>
-<p>DeepSeaGuard ensures full compliance with International Seabed Authority standards and environmental protection requirements:</p>
-<div class="standards-list">
-<div class="standard-item">
-<strong>ISBA/21/LTC/15</strong>
-<span>Annual reporting format and structure compliance</span>
-</div>
-<div class="standard-item">
-<strong>ISA Mining Code</strong>
-<span>Comprehensive rules and regulations adherence</span>
-</div>
-<div class="standard-item">
-<strong>Environmental Standards</strong>
-<span>Legally binding environmental protection measures</span>
-</div>
-<div class="standard-item">
-<strong>Real-Time Logging</strong>
-<span>Continuous monitoring of sediment, species, recovery rates, and waste</span>
-</div>
-</div>
-</div>
-<div class="cta-section">
-<a class="cta secondary" download href="assets/sample-isa-report.pdf">Download Sample ISA Report</a>
-<blockquote class="quote">"DeepSeaGuard sets a new standard for ocean mining compliance" — Dr. Evelyn Nash, Policy Advisor</blockquote>
-<a class="cta" href="#contact">Request DeepSeaGuard Demo</a>
-<a class="cta secondary" href="https://github.com/tritonminingco/deepseaguard" target="_blank">View on GitHub</a>
-</div>
-</section>
-<!-- DATA VISUALIZATION SECTION -->
-<section class="animate-on-scroll" id="data-insights">
-<h2 class="section-title">Data Insights</h2>
-<p>Explore the critical mineral supply-demand gap and our environmental impact reduction.</p>
-<div class="charts-section" id="chart-container"></div>
-<p class="note" style="text-align:center;">Exportable CSVs available. Public API access by request.</p>
-</section>
-<!-- ARTICLES -->
-<section class="animate-on-scroll" id="articles">
-<h2 class="section-title">Latest Articles</h2>
-<div class="articles-list">
-<article>
-<p class="meta">By Jorge Pimentel · June 2025 · #AI #SeabedMining</p>
-<h3>How AI is Transforming Ocean Mining</h3>
-<p>Discover how artificial intelligence is making deep-sea exploration safer and more sustainable.</p>
-<a class="read-more" href="#">Read More</a>
-</article>
-<article>
-<h3>Designing for the Deep: Engineering Challenges</h3>
-<p>Explore the unique engineering hurdles faced when building autonomous underwater vehicles.</p>
-<a class="read-more" href="#">Read More</a>
-</article>
-<article>
-<h3>Ethics and Compliance in Ocean Resource Extraction</h3>
-<p>Learn about the importance of transparency and compliance in the future of ocean mining.</p>
-<a class="read-more" href="#">Read More</a>
-</article>
-</div>
-</section>
-<!-- CONTACT SECTION: Provides company contact info and a user message form -->
-<section class="animate-on-scroll" id="contact">
-<h2 class="section-title">Get in Touch</h2>
-<!-- Brief invitation for users to reach out -->
-<p>Interested in learning more about our technology or DeepSeaGuard compliance platform? We'd love to hear from you.</p>
-<div class="contact-container">
-<!-- CONTACT INFO: Company and project contact details -->
-<div class="contact-info">
-<div class="contact-item">
-<strong>Media</strong>
-<span>press@tritonmining.co</span>
-</div>
-<h3>Contact Information</h3>
-<div class="contact-item">
-<strong>Headquarters</strong>
-<span>Naples, Florida, USA</span>
-</div>
-<div class="contact-item">
-<strong>Email</strong>
-<span>info@tritonmining.co</span>
-</div>
-<div class="contact-item">
-<strong>GitHub</strong>
-<!-- Link to main company GitHub profile -->
-<span><a href="https://github.com/tritonminingco" target="_blank">github.com/tritonminingco</a></span>
-</div>
-<div class="contact-item">
-<strong>DeepSeaGuard</strong>
-<!-- Link to DeepSeaGuard open source repository -->
-<span><a href="https://github.com/tritonminingco/deepseaguard" target="_blank">Open Source Repository</a></span>
-</div>
-<!-- Call-to-action button for booking a call via Calendly -->
-<a class="cta secondary" href="https://calendly.com/triton-mining" style="margin-top:1rem; display:inline-block;" target="_blank">Book a Call</a>
-</div>
-<!-- CONTACT FORM: Allows users to send a message to the company -->
-<div class="contact-form">
-<h3>Send us a Message</h3>
-<form id="contactForm">
-<div class="form-group">
-<label for="name">Name *</label>
-<!-- Required name input -->
-<input id="name" name="name" required type="text"/>
-</div>
-<div class="form-group">
-<label for="email">Email *</label>
-<!-- Required email input -->
-<input id="email" name="email" required type="email"/>
-</div>
-<div class="form-group">
-<label for="organization">Organization</label>
-<!-- Optional organization input -->
-<input id="organization" name="organization" type="text"/>
-</div>
-<div class="form-group">
-<label for="interest">Area of Interest</label>
-<!-- Dropdown for user to select their interest area -->
-<select id="interest" name="interest">
-<option value="">Select an option</option>
-<option value="technology">Mining Technology</option>
-<option value="deepseaguard">DeepSeaGuard Platform</option>
-<option value="compliance">ISA Compliance</option>
-<option value="partnership">Partnership Opportunities</option>
-<option value="investment">Investment Inquiries</option>
-<option value="other">Other</option>
-</select>
-</div>
-<div class="form-group">
-<label for="message">Message *</label>
-<!-- Required message textarea -->
-<textarea id="message" name="message" required rows="5"></textarea>
-</div>
-<!-- Submit button for the contact form -->
-<button class="cta" type="submit">Send Message</button>
-</form>
-</div>
-</div>
-</section>
-</main>
-<!-- FOOTER -->
-<footer>
-<div class="footer-content">
-<img alt="Triton Logo" class="footer-logo" src="assets/logo.png"/>
-<p>© 2025 Triton Mining Co. | Naples, FL</p>
-<a href="https://github.com/tritonminingco" target="_blank">View on GitHub</a>
-</div>
-</footer>
-<!-- Back to top button -->
-<button aria-label="Back to top" class="back-to-top">
-<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M18 15l-6-6-6 6"></path>
-</svg>
-</button>
-<!-- Scripts -->
-<script src="visualizations.js"></script>
-<script src="navigation.js"></script>
-</body>
+      function toggleMenu() {
+        nav.classList.toggle('active');
+      }
+
+      main_content.addEventListener('click', () => {
+        nav.classList.remove('active');
+      })
+
+      nav.addEventListener('click', function (e) {
+        if (!panel.contains(e.target)) {
+          nav.classList.remove('active');
+        }
+      });
+    </script>
+  </body>
 </html>
