@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Mobile navigation toggle
-  const navToggle = document.querySelector('.mobile-nav-toggle');
-  const primaryNav = document.querySelector('#primary-navigation');
+  const navToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
   const navLinks = document.querySelectorAll('.nav-link');
   
   if (navToggle) {
     navToggle.addEventListener('click', () => {
-      const visibility = primaryNav.getAttribute('data-visible') === 'true';
-      primaryNav.setAttribute('data-visible', !visibility);
-      navToggle.setAttribute('aria-expanded', !visibility);
+      const isExpanded = mainNav.classList.contains('active');
+      mainNav.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', !isExpanded);
     });
   }
   
@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (window.innerWidth <= 768) {
-        primaryNav.setAttribute('data-visible', 'false');
+        mainNav.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
       }
     });
   });
-  
+
   // Add active class to navigation links based on scroll position
   window.addEventListener('scroll', () => {
     let current = '';
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (scrollY >= (sectionTop - sectionHeight / 3)) {
+      if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
         current = section.getAttribute('id');
       }
     });
