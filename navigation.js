@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize AOS animations
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100
+  });
+
+
   // Mobile navigation toggle
   const navToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
@@ -21,6 +29,71 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Animated counter for hero stats
+  function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.textContent = target;
+          clearInterval(timer);
+        } else {
+          counter.textContent = Math.floor(current);
+        }
+      }, 16);
+    });
+  }
+
+  // Trigger counter animation when hero is visible
+  const heroSection = document.getElementById('hero');
+  if (heroSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(heroSection);
+  }
+
+  // Tech card hover effects
+  const techCards = document.querySelectorAll('.tech-card');
+  techCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+
+  // Preview card interactions
+  const previewCards = document.querySelectorAll('.preview-card');
+  previewCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const tech = card.getAttribute('data-tech');
+      if (tech) {
+        // Scroll to corresponding section
+        const targetSection = document.getElementById(tech);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }); 
+  
+  // Initialize search functionality
+  initializeSearch();
 
   // Add active class to navigation links based on scroll position
   window.addEventListener('scroll', () => {
@@ -84,9 +157,130 @@ document.addEventListener('DOMContentLoaded', function() {
     el.classList.add('animate-on-scroll');
     observer.observe(el);
   });
-});
+  // Search functionality
+  function toggleSearch() {
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchInput = document.getElementById('search-input');
+    
+    searchOverlay.classList.toggle('active');
+    
+    if (searchOverlay.classList.contains('active')) {
+      searchInput.focus();
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
 
-  
+  function searchFor(term) {
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = term;
+    performSearch(term);
+  }
+
+  function performSearch(term) {
+    // Simple search implementation
+    const sections = document.querySelectorAll('section');
+    const results = [];
+    
+    sections.forEach(section => {
+      const text = section.textContent.toLowerCase();
+      if (text.includes(term.toLowerCase())) {
+        results.push({
+          title: section.querySelector('h2, h3')?.textContent || 'Section',
+          content: section.textContent.substring(0, 200) + '...',
+          element: section
+        });
+      }
+    });
+    
+    displaySearchResults(results);
+  }
+
+  function displaySearchResults(results) {
+    const resultsContainer = document.getElementById('search-results');
+    
+    if (results.length === 0) {
+      resultsContainer.innerHTML = '<p>No results found. Try a different search term.</p>';
+      return;
+    }
+    
+    const resultsHTML = results.map(result => `
+      <div class="search-result-item" onclick="scrollToSection('${result.element.id}')">
+        <h4>${result.title}</h4>
+        <p>${result.content}</p>
+      </div>
+    `).join('');
+    
+    resultsContainer.innerHTML = `
+      <div class="search-results-list">
+        <h4>Search Results</h4>
+        ${resultsHTML}
+      </div>
+    `;
+  }
+
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      toggleSearch();
+    }
+  }
+
+  // Theme toggle functionality
+  function toggleTheme() {
+    const body = document.body;
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update theme toggle icon
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.setAttribute('aria-label', `Switch to ${currentTheme} mode`);
+  }
+
+  // Initialize theme from localStorage
+  function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+  }
+
+  // Initialize theme on page load
+  initializeTheme();
+
+  // Search input event listener
+  function initializeSearch() {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      let searchTimeout;
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          if (e.target.value.length > 2) {
+            performSearch(e.target.value);
+          } else {
+            document.getElementById('search-results').innerHTML = `
+              <div class="search-suggestions">
+                <h4>Popular Searches</h4>
+                <div class="suggestion-tags">
+                  <span class="suggestion-tag" onclick="searchFor('CrabBot')">CrabBot</span>
+                  <span class="suggestion-tag" onclick="searchFor('Luna AUV')">Luna AUV</span>
+                  <span class="suggestion-tag" onclick="searchFor('OceanSim')">OceanSim</span>
+                  <span class="suggestion-tag" onclick="searchFor('Ocean OS')">Ocean OS</span>
+                  <span class="suggestion-tag" onclick="searchFor('DeepSeaGuard')">DeepSeaGuard</span>
+                  <span class="suggestion-tag" onclick="searchFor('Environmental Monitoring')">Environmental Monitoring</span>
+                </div>
+              </div>
+            `;
+          }
+        }, 300);
+      });
+    }
+  }
+
   // Contact form functionality
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
@@ -118,6 +312,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 2000);
     });
   }
+  // Close search on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const searchOverlay = document.getElementById('search-overlay');
+      if (searchOverlay.classList.contains('active')) {
+        toggleSearch();
+      }
+    }
+  });
   
   // Notification system
   function showNotification(message, type = 'info') {
@@ -397,48 +600,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Initialize all enhancements
-  createScrollProgress();
-  initParallax();
-  initSmoothScrolling();
-  createParticles();
-  enhanceFormValidation();
   initLazyLoading();
   enhanceKeyboardNavigation();
   initPerformanceMonitoring();
-  
-  // Add CSS for form validation feedback
-  const style = document.createElement('style');
-  style.textContent = `
-    .form-group input.error,
-    .form-group textarea.error {
-      border-color: #ff4444;
-      box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
-    }
-    
-    .form-group input.valid,
-    .form-group textarea.valid {
-      border-color: #00b4d8;
-    }
-    
-    .field-feedback {
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #ff4444;
-    }
-    
-    .keyboard-navigation *:focus {
-      outline: 2px solid #00b4d8 !important;
-      outline-offset: 2px !important;
-    }
-    
-    img.loaded {
-      opacity: 1;
-      transition: opacity 0.3s ease;
-    }
-    
-    img[loading="lazy"] {
-      opacity: 0;
-    }
-  `;
-  document.head.appendChild(style);
-
+});

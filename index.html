@@ -15,11 +15,14 @@
     <title>Triton Mining Co. - Sustainable Deep-Sea Mining Technology</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet"/>
     <link href="./enhanced-styles.css" rel="stylesheet"/>
     <!-- Add Chart.js library with integrity check -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/triton-logo.png">
   </head>
@@ -34,10 +37,27 @@
           <h1 class="company-name">Triton Mining Co.</h1>
         </div>
 
-        <!-- Hamburger (mobile only) -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-icon">☰</span>
-        </button>
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="search-toggle" aria-label="Toggle search" onclick="toggleSearch()">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </button>
+          <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+            <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-icon">☰</span>
+          </button>
+        </div>
       </div>
       <div>
         <nav class="main-nav" role="navigation" aria-label="Main navigation">
@@ -57,15 +77,86 @@
     <main id="main-content">
       <!-- HERO -->
       <section id="hero" role="banner" aria-labelledby="hero-title">
-        <img alt="Deep ocean mining technology background showing autonomous underwater vehicles" class="hero-bg" src="assets/hero.png" role="presentation"/>
-        <div class="hero-text">
-          <p class="hero-subproof">Pioneering sustainable deep-sea mining through AI-powered autonomous systems and real-time environmental compliance monitoring.</p>
-          <h2 id="hero-title" class="hero-bold">Sustainable Deep-Sea Mining Technology</h2>
-          <p class="hero-subproof">Triton Mining Co. leads the future of ocean resource extraction with autonomous underwater vehicles, advanced AI systems, and complete environmental transparency through our DeepSeaGuard platform.</p>
-          <div class="hero-cta-group" role="group" aria-label="Call to action buttons">
-            <a class="cta" href="#tech" aria-label="Explore our autonomous mining technology">Explore Our Technology</a>
-            <a class="cta secondary" href="#deepseaguard" aria-label="View DeepSeaGuard compliance platform">View DeepSeaGuard</a>
+        <div class="hero-background">
+          <img alt="Deep ocean mining technology background showing autonomous underwater vehicles" class="hero-bg" src="assets/hero.png" role="presentation"/>
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-text">Pioneering Ocean Technology</span>
+            </div>
+            <h1 id="hero-title" class="hero-title">
+              Sustainable Deep-Sea Mining Technology
+            </h1>
+            <p class="hero-description">Revolutionizing ocean resource extraction with AI-powered autonomous systems, real-time environmental monitoring, and complete transparency through our DeepSeaGuard platform.</p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-target="95">0</div>
+                <div class="stat-label">Environmental Impact Reduction</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="10000">0</div>
+                <div class="stat-label">Meters Operating Depth</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="72">0</div>
+                <div class="stat-label">Hours Autonomy</div>
+              </div>
+            </div>
+            <div class="hero-cta-group" role="group" aria-label="Call to action buttons">
+              <a class="cta primary" href="#tech" aria-label="Explore our autonomous mining technology">
+                <span>Explore Technology</span>
+                <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a class="cta secondary" href="#deepseaguard" aria-label="View DeepSeaGuard compliance platform">
+                <span>View DeepSeaGuard</span>
+                <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                </svg>
+              </a>
+            </div>
           </div>
+          <div class="hero-visual">
+            <div class="tech-showcase">
+              <div class="showcase-item" data-tech="crabot">
+                <div class="showcase-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+                <h4>CrabBot</h4>
+                <p>Precision Mining</p>
+              </div>
+              <div class="showcase-item" data-tech="luna">
+                <div class="showcase-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <h4>Luna AUV</h4>
+                <p>Autonomous Navigation</p>
+              </div>
+              <div class="showcase-item" data-tech="oceansim">
+                <div class="showcase-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                  </svg>
+                </div>
+                <h4>OceanSim</h4>
+                <p>Virtual Testing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-line"></div>
+          <span>Scroll to explore</span>
         </div>
       </section>
       <!-- AUTONOMOUS MINING SYSTEMS -->
@@ -73,20 +164,84 @@
         <h2 id="tech-title" class="section-title">Autonomous Mining Systems</h2>
         <p class="sub-swarm">Our AI-powered fleet of autonomous underwater vehicles (AUVs) operates with precision and environmental sensitivity, extracting critical minerals while maintaining complete compliance with ISA standards.</p>
         <div class="tech-images" role="list" aria-label="Autonomous mining technology systems">
-          <div class="tech-card" role="listitem">
-            <img alt="AI-powered mining tank showing swarm intelligence technology" loading="lazy" src="assets/swarm-tank.png" class="mobile-responsive"/>
-            <h3>Swarm Intelligence</h3>
-            <p>Coordinated fleet operations with real-time decision making and adaptive behavior patterns.</p>
+          <div class="tech-card" role="listitem" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-image">
+              <img alt="AI-powered mining tank showing swarm intelligence technology" loading="lazy" src="assets/swarm-tank.png" class="mobile-responsive"/>
+              <div class="card-overlay">
+                <div class="overlay-content">
+                  <h4>Swarm Intelligence</h4>
+                  <p>Advanced AI coordination</p>
+                  <button class="learn-more-btn">Learn More</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h3>Swarm Intelligence</h3>
+              <p>Coordinated fleet operations with real-time decision making and adaptive behavior patterns.</p>
+              <div class="card-features">
+                <span class="feature-tag">AI-Powered</span>
+                <span class="feature-tag">Real-time</span>
+                <span class="feature-tag">Adaptive</span>
+              </div>
+            </div>
           </div>
-          <div class="tech-card" role="listitem">
-            <img alt="CrabBot mining robot with flexible limbs for precise extraction" loading="lazy" src="assets/octopod-robot.png" class="mobile-responsive"/>
-            <h3>CrabBot</h3>
-            <p>Advanced robotic systems designed for precise nodule extraction with minimal seabed disturbance.</p>
+          <div class="tech-card" role="listitem" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-image">
+              <img alt="CrabBot mining robot with flexible limbs for precise extraction" loading="lazy" src="assets/octopod-robot.png" class="mobile-responsive"/>
+              <div class="card-overlay">
+                <div class="overlay-content">
+                  <h4>CrabBot</h4>
+                  <p>Precision mining robot</p>
+                  <button class="learn-more-btn">Learn More</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h3>CrabBot</h3>
+              <p>Advanced robotic systems designed for precise nodule extraction with minimal seabed disturbance.</p>
+              <div class="card-features">
+                <span class="feature-tag">Precision</span>
+                <span class="feature-tag">Flexible</span>
+                <span class="feature-tag">Eco-friendly</span>
+              </div>
+            </div>
           </div>
-          <div class="tech-card" role="listitem">
-            <img alt="Luna autonomous underwater vehicle for complex terrain navigation" loading="lazy" src="assets/flex-fish.png" class="mobile-responsive"/>
-            <h3>Luna AUV</h3>
-            <p>Bio-inspired autonomous vehicles capable of navigating complex underwater terrain with advanced AI.</p>
+          <div class="tech-card" role="listitem" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-image">
+              <img alt="Luna autonomous underwater vehicle for complex terrain navigation" loading="lazy" src="assets/flex-fish.png" class="mobile-responsive"/>
+              <div class="card-overlay">
+                <div class="overlay-content">
+                  <h4>Luna AUV</h4>
+                  <p>Autonomous navigation</p>
+                  <button class="learn-more-btn">Learn More</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <h3>Luna AUV</h3>
+              <p>Bio-inspired autonomous vehicles capable of navigating complex underwater terrain with advanced AI.</p>
+              <div class="card-features">
+                <span class="feature-tag">Bio-inspired</span>
+                <span class="feature-tag">Autonomous</span>
+                <span class="feature-tag">AI-Powered</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -231,7 +386,7 @@
       <section class="animate-on-scroll" id="venture">
         <h2 class="section-title">Strategic Partnerships</h2>
         <div class="partnership-content">
-          <img alt="Deep Blue Ventures Logo" loading="lazy" src="assets/logo-deepblue.png" class="mobile-responsive"/>
+        <img alt="Deep Blue Ventures Logo" loading="lazy" src="assets/logo-deepblue.png" class="mobile-responsive"/>
           <div class="partnership-text">
             <h3>Backed by Deep Blue Ventures</h3>
             <p>We're supported by a team of technologists, builders, and investors committed to sustainable ocean technology and long-term planetary solutions.</p>
@@ -463,12 +618,47 @@
         </div>
       </section>
     </main>
+    
+    <!-- SEARCH OVERLAY -->
+    <div id="search-overlay" class="search-overlay">
+      <div class="search-container">
+        <div class="search-header">
+          <h3>Search Triton Technology</h3>
+          <button class="search-close" onclick="toggleSearch()" aria-label="Close search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="search-input-container">
+          <input type="text" id="search-input" placeholder="Search for technology, features, or services..." autocomplete="off">
+          <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </div>
+        <div class="search-results" id="search-results">
+          <div class="search-suggestions">
+            <h4>Popular Searches</h4>
+            <div class="suggestion-tags">
+              <span class="suggestion-tag" onclick="searchFor('CrabBot')">CrabBot</span>
+              <span class="suggestion-tag" onclick="searchFor('Luna AUV')">Luna AUV</span>
+              <span class="suggestion-tag" onclick="searchFor('OceanSim')">OceanSim</span>
+              <span class="suggestion-tag" onclick="searchFor('Ocean OS')">Ocean OS</span>
+              <span class="suggestion-tag" onclick="searchFor('DeepSeaGuard')">DeepSeaGuard</span>
+              <span class="suggestion-tag" onclick="searchFor('Environmental Monitoring')">Environmental Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
       <div class="footer-content">
         <img alt="Triton Logo" class="footer-logo" src="assets/triton-logo.png"/>
         <div class="footer-text">
-          <p>© 2025 Triton Mining Co. | Naples, FL</p>
+        <p>© 2025 Triton Mining Co. | Naples, FL</p>
           <p>Pioneering sustainable deep-sea mining technology</p>
         </div>
         <div class="footer-links">
